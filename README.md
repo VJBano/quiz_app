@@ -1,1 +1,1 @@
-# quia_app
+# quiz_app
