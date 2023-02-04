@@ -3,7 +3,7 @@ import React from 'react'
 const Landing_Page = () => {
   return (
 
-    <div>Landing_Page</div>
+    <div className='text-base text-green-300 font-semibold'>Landing_Page</div>
   )
 }
 
