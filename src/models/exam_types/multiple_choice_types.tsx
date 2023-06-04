@@ -1,4 +1,5 @@
 export interface MultipleChoice {
+    type:string;
     id:number;
     numbering:number;
     question:string;
@@ -6,4 +7,5 @@ export interface MultipleChoice {
     choiceB:string | number | boolean;
     choiceC:string | number | boolean;
     choiceD?:string | number | boolean;
+    answerKey?:string | number | boolean;
 }
