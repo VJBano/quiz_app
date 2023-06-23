@@ -1,4 +1,4 @@
-name: Quiz
+name: Deploy GH pages
 
 on:
   push:
