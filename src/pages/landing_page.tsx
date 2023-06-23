@@ -2,13 +2,32 @@ import { url } from 'inspector';
 import React, { SyntheticEvent } from 'react'
 import { Navigate, useNavigate } from 'react-router-dom';
 import  "../assets/custom_css/landing_custom.css"
+import { UserList } from '../models/users_types/users_types';
+import { ID_Generator } from '../services/id_generator';
+import { CreateUser } from '../firebase/user_repo';
 
 const Landing_Page = () => {
     const navigate = useNavigate();
 
-    const click = (e:SyntheticEvent) => {
+    const handleLogin = (e:SyntheticEvent) => {
         e.preventDefault();
-        navigate('/home');
+
+        
+
+        const data:UserList = {
+            id:ID_Generator(),
+            username:"vanz",
+            email:"vanz@gmail.com",
+            password:"123",
+            recoveryKey:"bodong"
+        }
+
+        CreateUser(data).then((res) => {
+
+            alert(res)
+            
+        })
+        // navigate('/home');
     }
   return (
     <div className="landing_img_bg relative flex flex-col justify-center min-h-screen overflow-hidden" >
@@ -16,7 +35,7 @@ const Landing_Page = () => {
                 <h1 className="text-3xl font-semibold text-center text-purple-700 underline">
                    Quiz App
                 </h1>
-                <form className="mt-6">
+                <form className="mt-6" onSubmit={handleLogin}>
                     <div className="mb-2">
                         <label
                             
