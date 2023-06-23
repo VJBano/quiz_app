@@ -1,36 +1,33 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
-import Public_Routes from './routes/public_routes'
-import Quiz_Board from './components/quiz_board'
-import Multiple_Choice from './components/template/multiple_choice'
-import { MultipleChoice } from './models/exam_types/multiple_choice_types'
-import Quiz_Board_Right from './components/quiz_board_left'
-import Dialog_box from './components/dialog_box'
-import Dashboard from './components/dashboard'
+
+import Home_page from './pages/home_page'
+import Add_quiz from './pages/add_quiz';
+import Multiple_Choice from './components/multiple_choice';
+import Router from './routes/Router';
+import { ScreenDimensionProps } from './models/screen_types';
 
 function App() {
 
-  const [isOpen, setIsOpen] = useState(false);
+  const [screenSize, setScreenSize] = useState<ScreenDimensionProps>({width:window.innerWidth, height:window.innerHeight})
+  const [mobile, setMobile] = useState(false)
 
-const handleClose = () => {
-  setIsOpen(false);
-};
+  useEffect(() => {
 
-const handleOk = () => {
-  // Do something when OK button is clicked
-};
+    setScreenSize({width:window.innerWidth, height:window.innerHeight})
 
+    if(screenSize.height < 700 || screenSize.width < 700 ){
+          setMobile(true)
+    } else {
+          setMobile(false)
+    }
+  },[screenSize])
+  
   return (
     <div className="App ">
-       {/* <Public_Routes/> */}
-       {/* <Quiz_Board_Right/> */}
-       {/* <Multiple_Choice data={sample} /> */}
-       {/* <button onClick={() => setIsOpen(true)}>Open Modal</button>
-    <Dialog_box  isOpen={isOpen} title="Example Modal" onClose={handleClose} onOk={handleOk}>
-      <p>This is an example modal.</p>
-    </Dialog_box> */}
-    <Dashboard/>
+      {mobile? <h1>Download the App </h1>: <Router/>}
+    
     </div> 
   )
 }

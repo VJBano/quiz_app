@@ -1,53 +1,71 @@
-import React, { SyntheticEvent, useEffect, useState } from 'react'
-import {Link} from 'react-router-dom'
-import '../assets/landing_custom.css';
+import { url } from 'inspector';
+import React, { SyntheticEvent } from 'react'
+import { Navigate, useNavigate } from 'react-router-dom';
+import  "../assets/custom_css/landing_custom.css"
+
 const Landing_Page = () => {
+    const navigate = useNavigate();
 
-  const [opacity, setOpacity] = useState(0);
-  
-  useEffect(() => {
-    setOpacity(1);
-  }, []);
-
-  const handleLogin =async (e:SyntheticEvent) => {
-    
-    e.preventDefault()
-
-    alert('Hello')
-  }
-  
+    const click = (e:SyntheticEvent) => {
+        e.preventDefault();
+        navigate('/home');
+    }
   return (
+    <div className="landing_img_bg relative flex flex-col justify-center min-h-screen overflow-hidden" >
+            <div className="w-full p-6 m-auto bg-white rounded-md shadow-md lg:max-w-xl">
+                <h1 className="text-3xl font-semibold text-center text-purple-700 underline">
+                   Sign in
+                </h1>
+                <form className="mt-6">
+                    <div className="mb-2">
+                        <label
+                            
+                            className="block text-sm font-semibold text-gray-800"
+                        >
+                            Email
+                        </label>
+                        <input
+                            type="email"
+                            className="block w-full px-4 py-2 mt-2 border-gray-400 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                        />
+                    </div>
+                    <div className="mb-2">
+                        <label
+                            
+                            className="block text-sm font-semibold text-gray-800"
+                        >
+                            Password
+                        </label>
+                        <input
+                            type="password"
+                            className="block w-full px-4 py-2 mt-2 border-gray-400 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                        />
+                    </div>
+                    <a
+                        href="#"
+                        className="text-xs text-purple-600 hover:underline"
+                    >
+                        Forget Password?
+                    </a>
+                    <div className="mt-6">
+                        <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-purple-700 rounded-md hover:bg-purple-600 focus:outline-none focus:bg-purple-600">
+                            Login
+                        </button>
+                    </div>
+                </form>
 
-    <div className={`landing flex items-center justify-center `} >
-
-  <div className={`transition-opacity duration-1000 opacity-${opacity} w-full max-w-sm`}>
-    <div className="bg-white rounded-lg shadow-m  d p-6">
-      <h1 className="text-2xl font-bold mb-4">Quiz App</h1>
-      <p className="text-gray-700 mb-4">Sign in to access our quizzes and track your progress.</p>
-      <form onSubmit={handleLogin}>
-        <div className="mb-4">
-          <label className="block text-gray-700 font-medium mb-2" >Username</label>
-          <input required className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500" id="username" type="text"/>
+                <p className="mt-8 text-xs font-light text-center text-gray-700">
+                    {" "}
+                    Don't have an account?{" "}
+                    <a
+                        href="#"
+                        className="font-medium text-purple-600 hover:underline"
+                    >
+                        Sign up
+                    </a>
+                </p>
+            </div>
         </div>
-        <div className="mb-6">
-          <label className="block text-gray-700 font-medium mb-2">Password</label>
-          <input required className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500" id="password" type="password"/>
-        </div>
-        <div className="flex items-center justify-between">
-          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" type="submit">Sign In</button>
-          <Link to={"/forget-password"} className="inline-block align-baseline font-medium text-sm text-blue-500 hover:text-blue-800" >Forgot Password?</Link>
-        </div>
-      </form>
-      
-    </div>
-    <div className="flex items-center justify-center space-x-1">
-         <h1>No Account? </h1> 
-        <Link to={"/signup"} className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">
-              Sign Up Here
-            </Link>
-        </div>
-  </div>
-</div>
   )
 }
 
