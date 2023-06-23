@@ -7,6 +7,7 @@ import Add_quiz from './pages/add_quiz';
 import Multiple_Choice from './components/multiple_choice';
 import Router from './routes/Router';
 import { ScreenDimensionProps } from './models/screen_types';
+import { debounce } from 'lodash';
 
 function App() {
 
@@ -15,7 +16,19 @@ function App() {
 
   useEffect(() => {
 
-    setScreenSize({width:window.innerWidth, height:window.innerHeight})
+    const handleResize = debounce(() => {
+
+      setScreenSize({height:window.innerHeight, width:window.innerWidth})
+    },100)
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  },[])
+  
+  useEffect(() => {
 
     if(screenSize.height < 700 || screenSize.width < 700 ){
           setMobile(true)
