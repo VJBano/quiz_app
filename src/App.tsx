@@ -26,7 +26,7 @@ function App() {
   
   useEffect(() => {
 
-    if(screenSize.height < 700 || screenSize.width < 700 ){
+    if(screenSize.height < 500 || screenSize.width < 500 ){
           setMobile(true)
     } else {
           setMobile(false)
