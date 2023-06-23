@@ -4,11 +4,13 @@ import './App.css'
 import Router from './routes/Router';
 import { ScreenDimensionProps } from './models/screen_types';
 import { debounce } from 'lodash';
+import { isMobileDevice } from './services/detect_mobile';
 
 function App() {
 
-  const [screenSize, setScreenSize] = useState<ScreenDimensionProps>({width:window.innerWidth, height:window.innerHeight})
   const [mobile, setMobile] = useState(false)
+
+  const [screenSize, setScreenSize] = useState<ScreenDimensionProps>({width:window.innerWidth, height:window.innerHeight})
 
   useEffect(() => {
 
@@ -23,20 +25,16 @@ function App() {
       window.removeEventListener('resize', handleResize);
     };
   },[])
-  
+
   useEffect(() => {
 
-    if(screenSize.height < 500 || screenSize.width < 500 ){
-          setMobile(true)
-    } else {
-          setMobile(false)
-    }
+    setMobile(isMobileDevice())
+
   },[screenSize])
   
   return (
     <div className="App ">
       {mobile? <h1>Download the App. coming soon... </h1>: <Router/>}
-    
     </div> 
   )
 }
