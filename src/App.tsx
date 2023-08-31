@@ -48,7 +48,7 @@ function App() {
 
     const link = document.createElement('a');
           link.href = '../public/QuizApp.apk';
-          link.download = 'QuizApp.apk'; 
+          link.download = "/QuizApp.apk"; 
           link.click();
   }
 
