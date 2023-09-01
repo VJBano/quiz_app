@@ -20,7 +20,7 @@ import image15 from './assets/sc/image15.jpg'
 import image16 from './assets/sc/image16.jpg'
 import image17 from './assets/sc/image17.jpg'
 import vid from './assets/sc/vid.mp4'
-
+import apk from './apk_files/QuizApp.apk'
 function App() {
 
   const images = [
@@ -47,8 +47,8 @@ function App() {
   const handleDownload = () => {
 
     const link = document.createElement('a');
-          link.href = '../public/QuizApp.apk';
-          link.download = "/QuizApp.apk"; 
+          link.href = apk
+          link.download = "QuizApp.apk"; 
           link.click();
   }
 
