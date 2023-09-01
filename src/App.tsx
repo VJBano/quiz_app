@@ -126,7 +126,7 @@ function App() {
         </h1>
 
         <p className="mb-3 text-sm md:text-base text-black indent-4 font-mono text-justify">
-       {` Copyright@${new Date().getFullYear()} Vincent Jay Torres Bano`} 
+       {` Copyright@${new Date().getFullYear()} Vincent Jay Bano`} 
         </p>
         <p className="mb-3 text-sm md:text-base text-black indent-4 font-mono text-justify">
         All rights reserved.
@@ -140,7 +140,7 @@ function App() {
         </p>
 
         <p className="mb-3 text-sm md:text-base text-black indent-4 font-mono text-justify">
-        {` Copyright@${new Date().getFullYear()} Vincent Jay Torres Bano. All rights reserved.`}
+        {` Copyright@${new Date().getFullYear()} Vincent Jay Bano. All rights reserved.`}
         </p>
         <p className="mb-3 text-sm md:text-base text-black indent-4 font-mono text-justify">
         This quiz app and its content are protected by copyright law and international treaties. Unauthorized reproduction or distribution of this app, or any portion of it, may result in severe civil and criminal penalties, and will be prosecuted to the maximum extent possible under the law.
