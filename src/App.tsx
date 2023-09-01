@@ -95,7 +95,7 @@ function App() {
       </div>
       
       <div className='w-5/6 md:w-1/2 flex flex-col gap-2 justify-center items-center my-10'>
-        <video autoPlay controls className='w-[40%] h-[30%] flex mt-10'>
+        <video autoPlay controls className=' h-[30%] flex mt-10 w-3/4 md:w-1/3'>
           <source src={vid} type="video/mp4" />
         </video>
       </div>
@@ -121,36 +121,36 @@ function App() {
       </div>
     
       <div className='w-5/6 md:w-1/2 flex flex-col gap-2 justify-center items-center my-20'>
-      <h1 className='flex justify-start items-start w-full font-serif text-2xl'>
+      <h1 className='flex justify-start items-start w-full font-serif text-xl md:text-2xl'>
         Copyright
         </h1>
 
-        <p className="mb-3 text-base text-black indent-4 font-mono text-justify">
+        <p className="mb-3 text-sm md:text-base text-black indent-4 font-mono text-justify">
        {` Copyright@${new Date().getFullYear()} Vincent Jay Torres Bano`} 
         </p>
-        <p className="mb-3 text-base text-black indent-4 font-mono text-justify">
+        <p className="mb-3 text-sm md:text-base text-black indent-4 font-mono text-justify">
         All rights reserved.
         </p>
         
-        <p className=" text-base text-black indent-4 font-mono text-justify">
+        <p className=" text-sm md:text-base text-black indent-4 font-mono text-justify">
         Title: Quiz App Mobile
         </p>
-        <p className="mb-3 text-base text-black indent-4 font-mono text-justify">
+        <p className="mb-3 text-sm md:text-base text-black indent-4 font-mono text-justify">
         Version: 1.0.0
         </p>
 
-        <p className="mb-3 text-base text-black indent-4 font-mono text-justify">
+        <p className="mb-3 text-sm md:text-base text-black indent-4 font-mono text-justify">
         {` Copyright@${new Date().getFullYear()} Vincent Jay Torres Bano. All rights reserved.`}
         </p>
-        <p className="mb-3 text-base text-black indent-4 font-mono text-justify">
+        <p className="mb-3 text-sm md:text-base text-black indent-4 font-mono text-justify">
         This quiz app and its content are protected by copyright law and international treaties. Unauthorized reproduction or distribution of this app, or any portion of it, may result in severe civil and criminal penalties, and will be prosecuted to the maximum extent possible under the law.
           </p>
-        <p className="mb-3 text-base text-black indent-4 font-mono text-justify">
+        <p className="mb-3 text-sm md:text-base text-black indent-4 font-mono text-justify">
         For inquiries about licensing, usage, or any other matters, please contact:
          <strong>vincentjaybano45@gmail.com</strong>
         </p>
 
-        <p className="mb-3 text-base text-black indent-4 font-mono text-justify">
+        <p className="mb-3 text-sm md:text-base text-black indent-4 font-mono text-justify">
         <a href='https://vjbano.github.io/vanz_web/' className='text-blue-600 underline '> Vincent Website</a> 
         </p>
 

@@ -16,11 +16,9 @@ const Image_Carousel = ({images}:ImageCarouselProps) => {
     const goToNext = () => {
       setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
     };
-
-    console.log("images: ", images[currentIndex])
   
     return (
-      <div className="image-carousel">
+      <div className="image-carousel w-3/4 md:w-1/3">
         <img src={images[currentIndex]} alt={`Image ${currentIndex}`} className="carousel-image" />
 
         <div className='w-full flex justify-between flex-row'>
