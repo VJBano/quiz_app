@@ -23,6 +23,7 @@ import vid from './assets/sc/vid.mp4'
 import apk from './apk_files/QuizApp.apk'
 function App() {
 
+  
   const images = [
     image1,
     image2,
